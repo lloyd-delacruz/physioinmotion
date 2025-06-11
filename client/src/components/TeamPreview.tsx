@@ -52,7 +52,7 @@ export default function TeamPreview() {
               <h3 className="text-xl font-semibold text-neutral-dark mb-2">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium mb-3">
+              <p className="text-blue-600 font-medium mb-3">
                 {member.title}
               </p>
               <p className="text-neutral-mid text-sm leading-relaxed">
@@ -65,7 +65,9 @@ export default function TeamPreview() {
         <div className="text-center mt-12">
           <Button 
             onClick={handleViewAllTeam}
-            className="bg-secondary hover:bg-green-700 text-white px-8 py-3"
+            size="lg"
+            variant="outline"
+            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3"
           >
             Meet Our Full Team
           </Button>

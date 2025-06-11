@@ -5,32 +5,34 @@
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222, 15%, 15%);
-  --muted: hsl(210, 40%, 96%);
-  --muted-foreground: hsl(215, 16%, 47%);
+  --muted: hsl(220, 14%, 96%);
+  --muted-foreground: hsl(220, 8%, 46%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(222, 15%, 15%);
   --card: hsl(0, 0%, 100%);
   --card-foreground: hsl(222, 15%, 15%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(200, 85%, 55%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --primary: hsl(217, 91%, 60%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(172, 70%, 45%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(45, 100%, 60%);
-  --accent-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(220, 14%, 96%);
+  --secondary-foreground: hsl(220, 9%, 46%);
+  --accent: hsl(217, 91%, 60%);
+  --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(60, 9%, 98%);
-  --ring: hsl(222, 15%, 15%);
+  --ring: hsl(217, 91%, 60%);
   --radius: 0.5rem;
   
-  /* Modern vibrant colors for physiotherapy clinic */
-  --neutral-light: hsl(210, 40%, 98%);
-  --neutral-mid: hsl(215, 16%, 47%);
+  /* Uniform blue-focused colors for physiotherapy clinic */
+  --neutral-light: hsl(220, 14%, 98%);
+  --neutral-mid: hsl(220, 9%, 46%);
   --neutral-dark: hsl(222, 15%, 15%);
-  --gradient-start: hsl(200, 85%, 55%);
-  --gradient-middle: hsl(185, 75%, 50%);
-  --gradient-end: hsl(150, 65%, 45%);
+  --blue-50: hsl(214, 100%, 97%);
+  --blue-100: hsl(214, 95%, 93%);
+  --blue-500: hsl(217, 91%, 60%);
+  --blue-600: hsl(221, 83%, 53%);
+  --blue-700: hsl(224, 76%, 48%);
 }
 
 .dark {

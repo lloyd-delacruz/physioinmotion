@@ -7,22 +7,22 @@ const services = [
     icon: UserX,
     title: "Injury Rehabilitation",
     description: "Comprehensive treatment for sports injuries, workplace injuries, and post-surgical recovery with personalized rehabilitation programs.",
-    color: "text-primary",
-    bgColor: "bg-primary bg-opacity-10",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100",
   },
   {
     icon: Zap,
     title: "Sports Performance",
     description: "Optimize your athletic performance with movement analysis, strength training, and injury prevention strategies.",
-    color: "text-secondary",
-    bgColor: "bg-secondary bg-opacity-10",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100",
   },
   {
     icon: Brain,
     title: "Pain Management",
     description: "Evidence-based approaches to chronic pain management including manual therapy, exercise prescription, and education.",
-    color: "text-accent",
-    bgColor: "bg-accent bg-opacity-10",
+    color: "text-blue-600",
+    bgColor: "bg-blue-100",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ServicesPreview() {
                 </p>
                 <button
                   onClick={handleLearnMore}
-                  className="text-primary font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 inline-flex items-center"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 inline-flex items-center"
                 >
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
@@ -76,7 +76,8 @@ export default function ServicesPreview() {
         <div className="text-center mt-12">
           <Button 
             onClick={handleViewAllServices}
-            className="bg-primary hover:bg-blue-700 text-white px-8 py-3"
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
           >
             View All Services
           </Button>

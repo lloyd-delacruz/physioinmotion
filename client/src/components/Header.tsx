@@ -28,7 +28,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="flex items-center space-x-2">
-              <div className="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center">
+              <div className="bg-blue-600 text-white w-10 h-10 rounded-lg flex items-center justify-center">
                 <Heart className="h-5 w-5" />
               </div>
               <span className="font-bold text-xl text-neutral-dark">
@@ -45,10 +45,10 @@ export default function Header() {
                 return (
                   <Link key={item.name} href={item.href}>
                     <a
-                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 ${
                         isActive
-                          ? "text-primary bg-primary bg-opacity-10"
-                          : "text-neutral-mid hover:text-primary hover:bg-gray-50"
+                          ? "text-blue-600 bg-blue-100"
+                          : "text-neutral-mid hover:text-blue-600 hover:bg-blue-50"
                       }`}
                     >
                       {item.name}
