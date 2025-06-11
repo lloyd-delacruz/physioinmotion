@@ -1,42 +1,52 @@
-import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Services from "@/pages/Services";
-import OurTeam from "@/pages/OurTeam";
-import Contact from "@/pages/Contact";
-import NotFound from "@/pages/not-found";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-function Router() {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/our-team" component={OurTeam} />
-          <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+import Hero from "@/components/Hero";
+import ServicesPreview from "@/components/ServicesPreview";
+import TeamPreview from "@/components/TeamPreview";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import OurTeam from "@/components/OurTeam";
+import Contact from "@/components/Contact";
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <div className="min-h-screen">
+          <Header />
+          <main>
+            {/* Home Section */}
+            <section id="home">
+              <Hero />
+            </section>
+
+            {/* About Section */}
+            <section id="about">
+              <About />
+            </section>
+
+            {/* Services Section */}
+            <section id="services">
+              <Services />
+            </section>
+
+            {/* Team Section */}
+            <section id="team">
+              <OurTeam />
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact">
+              <Contact />
+            </section>
+          </main>
+          <Footer />
+        </div>
         <Toaster />
-        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );

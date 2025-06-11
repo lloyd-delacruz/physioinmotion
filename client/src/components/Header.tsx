@@ -1,31 +1,52 @@
-import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Our Team", href: "/our-team" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Team", href: "#team" },
+    { name: "Contact", href: "#contact" },
   ];
 
-  const isActive = (href: string) => {
-    if (href === "/" && location === "/") return true;
-    if (href !== "/" && location.startsWith(href)) return true;
-    return false;
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
   };
 
-  const isHomePage = location === "/";
+  const isActive = (href: string) => {
+    const sectionId = href.replace('#', '');
+    return activeSection === sectionId;
+  };
+
+  const isHomePage = activeSection === "home";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Determine active section based on scroll position
+      const sections = ['home', 'about', 'services', 'team', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -101,23 +122,24 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/">
-              <div className={`text-2xl font-bold transition-colors cursor-pointer ${getLogoClasses()}`}>
-                Physio in Motion
-              </div>
-            </Link>
+            <button 
+              onClick={() => scrollToSection('home')}
+              className={`text-2xl font-bold transition-colors cursor-pointer ${getLogoClasses()}`}
+            >
+              Physio in Motion
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
             {navigation.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => scrollToSection(item.href.replace('#', ''))}
                 className={getNavLinkClasses(isActive(item.href))}
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -155,18 +177,17 @@ export default function Header() {
           <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 rounded-b-2xl shadow-xl">
             <div className="flex flex-col space-y-2 p-6">
               {navigation.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.href}
-                  className={`px-4 py-3 text-base font-semibold transition-all duration-300 rounded-lg ${
+                  onClick={() => scrollToSection(item.href.replace('#', ''))}
+                  className={`px-4 py-3 text-base font-semibold transition-all duration-300 rounded-lg text-left ${
                     isActive(item.href)
                       ? "text-core-blue bg-blue-50 border-l-4 border-core-blue"
                       : "text-core-gray-700 hover:text-core-blue hover:bg-gray-50"
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
               <div className="border-t border-gray-200 pt-4 mt-4">
                 <div className="flex items-center text-core-gray-600 text-sm mb-4 px-4">
