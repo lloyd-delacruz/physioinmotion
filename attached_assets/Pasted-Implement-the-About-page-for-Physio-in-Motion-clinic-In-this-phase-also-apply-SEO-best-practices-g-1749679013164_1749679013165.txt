@@ -1,0 +1,111 @@
+Implement the About page for Physio in Motion clinic.
+In this phase, also apply SEO best practices globally across all pages.
+
+✅ Global Image Handling Update:
+From this phase forward, and retroactively for existing pages:
+
+All images must be AI-generated using DALL·E.
+
+DALL·E images should match the clinic’s tone:
+
+Modern, movement-focused, positive physiotherapy themes.
+
+Inclusive, diverse representation (reflect Vancouver’s multicultural community).
+
+Clean, professional, high visual quality.
+
+All previous placeholder images on Hero, Services, and Our Team pages must be replaced with new DALL·E-generated images matching this guideline.
+
+✅ Alt Text:
+
+All DALL·E images must include clear, descriptive alt text placeholders.
+
+Do not leave alt text empty.
+
+✅ About Page Purpose:
+The About page must communicate the clinic’s story, mission, philosophy, and local community connection.
+It is a trust-building page for both patients and search engines.
+
+✅ UI Framework:
+
+Use shadcn/ui components and UX patterns for consistent styling.
+
+Follow the uniform blue colour scheme already defined.
+
+✅ Page Structure:
+
+Page title (H1): "About Physio in Motion"
+
+Short introduction paragraph at the top (2–3 sentences).
+
+Sections to include:
+
+Our Mission — H2 heading, 1–2 paragraphs (placeholder text).
+
+Our Philosophy — H2 heading, 1–2 paragraphs (placeholder text).
+
+Our Story — H2 heading, 2–3 paragraphs (placeholder text about the clinic’s history, values, founder story).
+
+Our Community Commitment — H2 heading, optional 1–2 paragraphs (highlighting connection to Vancouver community and local values).
+
+✅ Images:
+
+Include at least 1 large DALL·E-generated hero/banner image at the top of the About page.
+
+Optionally include 1–2 more DALL·E-generated images within the body (e.g. in Philosophy or Community Commitment sections).
+
+Follow visual tone guidance: movement, vitality, wellness, physiotherapy, inclusive representation.
+
+✅ Responsiveness:
+
+Page must be fully responsive across all devices.
+
+Images must scale appropriately — no distortion or poor cropping.
+
+✅ SEO Optimization — About Page:
+
+Meta title: "About Physio in Motion | Vancouver Physiotherapy Clinic"
+
+Meta description: "Learn about the mission, philosophy, and story of Physio in Motion — your trusted physiotherapy clinic in Vancouver, Canada."
+
+Headings structured correctly (H1 → H2 → H3).
+
+All images must have alt text.
+
+✅ Global SEO Optimization — All Pages:
+Apply SEO optimization across Home, Services, Our Team, Contact, About:
+
+Meta title placeholders for each page.
+
+Meta description placeholders for each page.
+
+Proper alt text for all DALL·E-generated images.
+
+Clean heading structure.
+
+Proper semantic HTML.
+
+✅ Accessibility:
+
+All images must include alt text.
+
+All text content must use semantic HTML (headings, paragraphs).
+
+Page fully responsive and accessible.
+
+✅ Code Structure:
+
+About page in About.tsx or About.jsx component.
+
+Text sections modular with placeholders.
+
+DALL·E-generated images placed in /public/images/about/ folder with descriptive filenames and proper alt text.
+
+✅ DO NOT:
+
+Do not use stock images from other sources — use only DALL·E-generated images from this phase forward.
+
+Do not use inconsistent colour schemes — stay with the uniform blue theme.
+
+Do not hardcode content inline — structure content properly.
+

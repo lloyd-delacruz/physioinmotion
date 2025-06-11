@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ServiceCard from "@/components/ServiceCard";
 
 interface Service {
@@ -54,6 +55,22 @@ const services: Service[] = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    // SEO optimization for Services page
+    document.title = "Services | Physio in Motion Vancouver Physiotherapy";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Comprehensive physiotherapy services in Vancouver including manual therapy, sports injury treatment, chronic pain management, and rehabilitation programs.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Comprehensive physiotherapy services in Vancouver including manual therapy, sports injury treatment, chronic pain management, and rehabilitation programs.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}

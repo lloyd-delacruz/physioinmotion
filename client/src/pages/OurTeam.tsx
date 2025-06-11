@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import TeamMemberCard from "@/components/TeamMemberCard";
 
 interface TeamMember {
@@ -54,6 +55,22 @@ const teamMembers: TeamMember[] = [
 ];
 
 export default function OurTeam() {
+  useEffect(() => {
+    // SEO optimization for Our Team page
+    document.title = "Our Team | Physio in Motion Vancouver Physiotherapy";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Meet our experienced physiotherapy team in Vancouver. Our registered physiotherapists and healthcare professionals provide expert, compassionate care for all your rehabilitation needs.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Meet our experienced physiotherapy team in Vancouver. Our registered physiotherapists and healthcare professionals provide expert, compassionate care for all your rehabilitation needs.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
