@@ -1,128 +1,125 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Trigger fade-in animation after component mounts
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    return () => clearTimeout(timer);
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = document.querySelectorAll('.scroll-fade-in');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
-  const handleBookAppointment = () => {
-    // TODO: Integrate with JaneApp booking system
-    window.open("https://janeapp.com/", "_blank");
-  };
-
-  const handleLearnMore = () => {
-    // Smooth scroll to services section
-    const servicesSection = document.getElementById("services-section");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
-      {/* Background Image with Blue Overlay */}
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
-            backgroundPosition: "center 30%"
-          }}
-        />
-        {/* Blue-tinted Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/75 via-blue-800/70 to-blue-700/65" />
-      </div>
+    <section className="core-video-hero">
+      {/* Video Background for Desktop */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="hidden md:block"
+        poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
+      >
+        {/* Placeholder video URL - would be replaced with actual physiotherapy video */}
+        <source src="https://sample-videos.com/zip/10/mp4/1080/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+      </video>
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div 
-          className={`transform transition-all duration-1000 ease-out ${
-            isVisible 
-              ? "translate-y-0 opacity-100" 
-              : "translate-y-8 opacity-0"
-          }`}
-        >
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span className="block text-white">Move Better.</span>
-            <span className="block text-blue-300">Live Better.</span>
-          </h1>
+      {/* Mobile Background Image */}
+      <div 
+        className="md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`
+        }}
+      />
 
-          {/* Subheadline */}
-          <p 
-            className={`text-xl md:text-2xl lg:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light transform transition-all duration-1000 ease-out delay-300 ${
-              isVisible 
-                ? "translate-y-0 opacity-100" 
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            Personalized physiotherapy & rehabilitation in <span className="text-white font-medium">Toronto</span>, Canada
-          </p>
+      {/* Overlay */}
+      <div className="core-video-overlay" />
 
-          {/* CTA Buttons */}
-          <div 
-            className={`flex flex-col sm:flex-row gap-6 justify-center items-center transform transition-all duration-1000 ease-out delay-500 ${
-              isVisible 
-                ? "translate-y-0 opacity-100" 
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <Button
-              onClick={handleBookAppointment}
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 text-lg shadow-xl transform transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 hover:shadow-2xl group"
-            >
-              Book an Appointment
-              <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-
-            <Button
-              onClick={handleLearnMore}
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold backdrop-blur-sm bg-white/10 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 group"
-            >
-              Learn More
-              <ChevronDown className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-y-1" />
-            </Button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div 
-            className={`mt-16 flex flex-wrap justify-center items-center gap-6 text-blue-100 transform transition-all duration-1000 ease-out delay-700 ${
-              isVisible 
-                ? "translate-y-0 opacity-100" 
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/20">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              <span className="font-medium text-sm">Licensed Professionals</span>
+      {/* Content */}
+      <div className="core-video-content">
+        <div className="core-container text-center text-white">
+          <div className="max-w-5xl mx-auto space-y-8">
+            
+            {/* Main Heading */}
+            <div className="scroll-fade-in">
+              <h1 className="core-heading-hero text-white mb-6">
+                Expert Physiotherapy
+                <span className="block text-blue-200">That Moves You Forward</span>
+              </h1>
+              <p className="core-text-lead text-blue-100 max-w-3xl mx-auto mb-8">
+                Leading physiotherapy clinic in Vancouver providing evidence-based treatment, personalized care plans, and innovative rehabilitation solutions to help you achieve optimal movement and live pain-free.
+              </p>
             </div>
-            <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/20">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              <span className="font-medium text-sm">Direct Insurance Billing</span>
+
+            {/* Action Buttons */}
+            <div className="scroll-fade-in flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <button
+                onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
+                className="core-btn-primary text-lg px-12 py-5 hover:scale-105 transition-transform duration-300 shadow-2xl"
+              >
+                Book Your Assessment
+              </button>
+              <button
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="core-btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-blue-900 text-lg px-12 py-5"
+              >
+                Explore Services
+              </button>
             </div>
-            <div className="flex items-center space-x-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/20">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              <span className="font-medium text-sm">Same Day Appointments</span>
+
+            {/* Key Stats */}
+            <div className="scroll-fade-in grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
+              <div className="text-center group">
+                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300">15+</div>
+                <div className="text-blue-200 font-medium text-lg">Years of Excellence</div>
+              </div>
+              <div className="text-center group">
+                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.2s' }}>2000+</div>
+                <div className="text-blue-200 font-medium text-lg">Lives Transformed</div>
+              </div>
+              <div className="text-center group">
+                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.4s' }}>98%</div>
+                <div className="text-blue-200 font-medium text-lg">Patient Satisfaction</div>
+              </div>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="scroll-fade-in pt-12">
+              <div className="flex flex-wrap justify-center items-center gap-6 opacity-90">
+                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
+                  <span className="text-white font-medium text-lg">Registered Physiotherapists</span>
+                </div>
+                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
+                  <span className="text-white font-medium text-lg">Direct Billing Available</span>
+                </div>
+                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
+                  <span className="text-white font-medium text-lg">Evidence-Based Care</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse" />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" 
+           onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+        <div className="w-6 h-10 border-2 border-white border-opacity-60 rounded-full flex justify-center hover:border-opacity-100 transition-all duration-300">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
