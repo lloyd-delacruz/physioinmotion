@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
 
 export default function Contact() {
+  useEffect(() => {
+    // SEO optimization for Contact page
+    document.title = "Contact Us | Physio in Motion Vancouver Physiotherapy";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Contact Physio in Motion in Vancouver. Book appointments, ask questions, or visit our clinic. Phone, email, and online booking available.");
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = "Contact Physio in Motion in Vancouver. Book appointments, ask questions, or visit our clinic. Phone, email, and online booking available.";
+      document.head.appendChild(meta);
+    }
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
