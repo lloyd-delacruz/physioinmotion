@@ -1,0 +1,88 @@
+Proceed to Phase 3 of the Vertical Slice:
+Implement the Services page for Physio in Motion clinic.
+
+Page Purpose:
+This page should present the key physiotherapy services offered by the clinic in a clear, professional, visually engaging, and conversion-friendly layout.
+The goal is to help users quickly understand what services are offered and be encouraged to book an appointment via JaneApp.
+
+UI Framework:
+
+Follow shadcn/ui components and UX patterns as much as possible.
+
+Use the uniform blue theme established earlier (no random colours).
+
+✅ Page Structure:
+
+Page title (H1): "Our Services"
+
+Short intro paragraph (2–3 sentences) at the top, explaining that the clinic offers a wide range of physiotherapy services tailored to individual needs.
+→ Use placeholder text here; I will replace it later.
+
+✅ Service Blocks:
+Each service should be presented as a card or tile in a responsive grid layout.
+Cards should use shadcn/ui Card component (or similar structure).
+
+Each card must include:
+
+Service Title (H3 or Card title)
+
+Short description (2–3 sentences max — dummy text)
+
+Optional image — placeholder image (Unsplash / Pexels physiotherapy-related imagery)
+
+Optional CTA button: "Learn More" (for future expansion — can link to /services/service-name or # for now)
+
+✅ Number of Services to Show:
+At least 6 service blocks as placeholders. Example services to include (with dummy text):
+
+Manual Therapy
+
+Sports Injury Rehabilitation
+
+Post-Surgical Physiotherapy
+
+Chronic Pain Management
+
+Pediatric Physiotherapy
+
+Workplace Injury Rehabilitation
+
+✅ Layout Guidance:
+
+Responsive grid (3 columns on desktop, 2 columns on tablet, 1 column stacked on mobile)
+
+Use consistent spacing, margins, and typography (shadcn/ui + Tailwind)
+
+The cards should have slight hover animation (scale up slightly or subtle shadow on hover)
+
+Cards should feel light, modern, and clean — NOT heavy or boxy.
+
+✅ Responsiveness:
+
+Page must be fully responsive across all devices.
+
+Images must scale appropriately and not overflow.
+
+Text must remain readable and accessible.
+
+✅ Accessibility:
+
+Use proper semantic HTML (headings, lists if used).
+
+Ensure all images have alt text placeholders.
+
+✅ Code Structure:
+
+Create ServiceCard component (ServiceCard.tsx or ServiceCard.jsx) for each card → reusable component.
+
+Import ServiceCard into Services page and map an array of service data to render the cards.
+
+Use dummy service data array in this phase (I will provide final content later).
+
+✅ DO NOT:
+
+Do not hardcode all services directly in JSX — use a data-driven approach with a services array.
+
+Do not use inconsistent spacing or colours.
+
+Do not introduce extra CTAs outside of cards or header/footer.
