@@ -1,0 +1,67 @@
+I want to recreate and improve the landing page (Home page Hero section) of Physio in Motion clinic website.
+Do not copy the dry look of https://oakridgephysio.ca — I want a more modern, vibrant, and engaging Hero section.
+
+Follow these specific instructions:
+
+✅ Design Tone / Visual Style:
+
+Colour palette: modern, vibrant, health/wellness–focused (light blues, teals, fresh greens, white space — avoid dark brown, beige)
+
+Use gradient backgrounds or soft gradients for visual depth
+
+Include subtle animation (fade-in on hero text, button hover effects, slight parallax or zoom effect if background image is used)
+
+✅ Hero Section Content:
+
+Large background image (athlete / active person / physiotherapy-related action shot — placeholder image for now)
+
+Overlay with slight gradient to make text readable
+
+Headline text: "Move Better. Live Better."
+
+Subheadline text: "Personalized physiotherapy & rehabilitation in [City Name], Canada" (placeholder for city)
+
+Prominent Book an Appointment button (links to JaneApp)
+
+Secondary button: Learn More (scrolls to Services section on page)
+
+✅ Animation/Effects:
+
+Hero text should have fade-in animation on page load
+
+Buttons should have smooth hover effect (color shift or slight scale up)
+
+Optional: background image can have very subtle parallax scroll effect
+
+✅ Responsiveness:
+
+Hero section must display perfectly on desktop, tablet, and mobile
+
+On mobile, background image should center around the subject (not cropped weirdly)
+
+Text should remain readable on all devices
+
+✅ Photo guidance:
+
+Use a placeholder image of an athlete, active adult, or physiotherapy-related treatment — NOT stock images of old clinic walls or dry equipment
+
+The photo should communicate movement, recovery, and vitality
+
+✅ Code Structure:
+
+Use modern CSS or Tailwind CSS — NO inline CSS or old style hacks
+
+Hero section in its own component (Hero.jsx or Hero.tsx)
+
+Animation implemented via CSS transitions or lightweight animation libraries (like Framer Motion or CSS keyframes)
+
+Follow accessibility best practices (alt text, proper headings)
+
+✅ DO NOT DO THESE:
+
+Do not use the colour scheme from OakridgePhysio.ca (brown and beige)
+
+Do not use stock images of hands-on-shoulders, elderly in wheelchairs, or “generic” medical feel
+
+Do not clutter the Hero with too much text
+
