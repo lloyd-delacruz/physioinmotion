@@ -353,6 +353,27 @@ html {
   }
 }
 
+/* Navigation Styles */
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-underline.active::after {
+  width: 100%;
+}
+
 /* Utility Classes */
 .text-core-navy { color: var(--core-navy); }
 .text-core-blue { color: var(--core-blue); }

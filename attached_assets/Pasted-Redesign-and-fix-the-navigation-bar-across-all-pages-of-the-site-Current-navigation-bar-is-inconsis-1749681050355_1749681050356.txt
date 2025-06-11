@@ -1,0 +1,73 @@
+Redesign and fix the navigation bar across all pages of the site.
+Current navigation bar is inconsistent:
+
+Text alignment is broken — text appears in different positions across pages.
+
+Colors are inconsistent — navbar colors do not match the landing page theme.
+
+Overall styling is not aligned with the current CoreNewport-inspired theme.
+
+✅ Requirements:
+
+The navigation bar must be identical across all pages — Home, About, Services, Our Team, Contact.
+
+Navigation items must be:
+
+Horizontally aligned
+
+Consistently spaced
+
+Same font and font weight as used in the landing page (CoreNewport-style bold headings, clean body text).
+
+Navbar background and text colors must match the landing page color scheme:
+
+Deep blue background (or transparent over hero video, if on Home page with overlay that matches theme).
+
+White or light grey text for nav items.
+
+On hover: use subtle color change consistent with CoreNewport style (lighter blue or white underline).
+
+Active page indicator: clear visual cue for current page (underline or text color shift).
+
+Sticky behavior:
+
+Navbar must stay sticky on scroll (fixed to top).
+
+If hero has a video background: navbar should appear over the video with correct contrast.
+
+Mobile responsiveness:
+
+Use a hamburger menu on mobile and tablet screens.
+
+Mobile menu styling must match the desktop theme — deep blue background, white/light grey text, consistent spacing.
+
+✅ Code structure:
+
+Navbar should be a single reusable component (e.g., Navbar.tsx or Navigation.tsx).
+
+Do not duplicate nav code across pages.
+
+Navbar component must dynamically highlight the active page.
+
+Navbar styles must pull from the same theme settings used on the landing page (Tailwind config / shadcn/ui theme).
+
+✅ Do not:
+
+Do not use hardcoded styles or inconsistent inline CSS.
+
+Do not use mismatched font weights, sizes, or colors.
+
+Do not allow text to shift or misalign between pages.
+
+✅ Summary:
+Redesign and rebuild the navbar so it is:
+
+Uniform across all pages
+
+Styled consistently with the CoreNewport-inspired landing page
+
+Fully responsive
+
+Accessible
+
+Clean and professional

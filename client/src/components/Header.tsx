@@ -21,6 +21,8 @@ export default function Header() {
     return false;
   };
 
+  const isHomePage = location === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -30,40 +32,89 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Determine navbar background and text colors
+  const getNavbarClasses = () => {
+    if (isHomePage && !isScrolled) {
+      // Transparent navbar on home page hero
+      return 'bg-transparent';
+    } else {
+      // Solid navbar on all other pages or when scrolled
+      return 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100';
+    }
+  };
+
+  const getLogoClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'text-white hover:text-blue-200';
+    } else {
+      return 'text-core-navy hover:text-core-blue';
+    }
+  };
+
+  const getNavLinkClasses = (isActiveLink: boolean) => {
+    const baseClasses = "px-4 py-2 text-base font-semibold transition-all duration-300 rounded-lg nav-underline";
+    
+    if (isHomePage && !isScrolled) {
+      // Home page transparent navbar
+      if (isActiveLink) {
+        return `${baseClasses} active text-white`;
+      } else {
+        return `${baseClasses} text-blue-100 hover:text-white hover:bg-white/10`;
+      }
+    } else {
+      // Solid navbar
+      if (isActiveLink) {
+        return `${baseClasses} active text-core-blue`;
+      } else {
+        return `${baseClasses} text-core-gray-700 hover:text-core-blue hover:bg-blue-50`;
+      }
+    }
+  };
+
+  const getPhoneClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'text-blue-100';
+    } else {
+      return 'text-core-gray-600';
+    }
+  };
+
+  const getButtonClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'bg-white text-core-blue hover:bg-blue-50';
+    } else {
+      return 'core-btn-primary';
+    }
+  };
+
+  const getMobileButtonClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'text-white hover:bg-white/20';
+    } else {
+      return 'text-core-gray-700 hover:text-core-blue hover:bg-gray-100';
+    }
+  };
+
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-        : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavbarClasses()}`}>
       <div className="core-container">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              <div className={`text-2xl font-bold transition-colors cursor-pointer ${
-                isScrolled ? 'text-core-navy' : 'text-white'
-              } hover:text-core-blue`}>
+              <div className={`text-2xl font-bold transition-colors cursor-pointer ${getLogoClasses()}`}>
                 Physio in Motion
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8">
+          <nav className="hidden lg:flex items-center space-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-white/10 ${
-                  isActive(item.href)
-                    ? isScrolled 
-                      ? "text-core-blue bg-blue-50" 
-                      : "text-white bg-white/20"
-                    : isScrolled
-                      ? "text-core-gray-700 hover:text-core-blue"
-                      : "text-blue-100 hover:text-white"
-                }`}
+                className={getNavLinkClasses(isActive(item.href))}
               >
                 {item.name}
               </Link>
@@ -72,16 +123,12 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-6">
-            <div className={`flex items-center text-sm font-medium ${
-              isScrolled ? 'text-core-gray-600' : 'text-blue-100'
-            }`}>
+            <div className={`flex items-center text-sm font-medium ${getPhoneClasses()}`}>
               <Phone className="h-4 w-4 mr-2" />
               <span>(604) 555-0123</span>
             </div>
             <button 
-              className={`core-btn-primary text-sm px-6 py-3 ${
-                isScrolled ? '' : 'bg-white text-core-blue hover:bg-blue-50'
-              }`}
+              className={`text-sm px-6 py-3 font-semibold rounded-lg transition-all duration-300 hover:scale-105 ${getButtonClasses()}`}
               onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
             >
               Book Assessment
@@ -92,11 +139,7 @@ export default function Header() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors ${
-                isScrolled 
-                  ? 'text-core-gray-700 hover:text-core-blue hover:bg-gray-100' 
-                  : 'text-white hover:bg-white/20'
-              }`}
+              className={`p-2 rounded-lg transition-colors ${getMobileButtonClasses()}`}
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -115,7 +158,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg ${
+                  className={`px-4 py-3 text-base font-semibold transition-all duration-300 rounded-lg ${
                     isActive(item.href)
                       ? "text-core-blue bg-blue-50 border-l-4 border-core-blue"
                       : "text-core-gray-700 hover:text-core-blue hover:bg-gray-50"
