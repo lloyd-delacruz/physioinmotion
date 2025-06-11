@@ -74,59 +74,73 @@ export default function OurTeam() {
   }, []);
 
   return (
-    <div className="core-section bg-core-gray-50">
-      <div className="core-container">
-        <div className="text-center mb-16 scroll-fade-in">
-          <h2 className="core-heading-section text-core-navy mb-6">
-            Meet Our Team
-          </h2>
-          <p className="core-text-lead text-core-gray-600 max-w-3xl mx-auto">
-            Our dedicated team of registered physiotherapists and healthcare professionals is committed to providing personalized, evidence-based care. We believe in treating the whole person, not just the condition, to help you achieve lasting results.
-          </p>
-        </div>
+    <div className="relative bg-gradient-to-br from-slate-100 via-white to-slate-50 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-32 right-20 w-40 h-40 bg-core-blue/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-32 left-20 w-56 h-56 bg-core-navy/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/3 left-1/2 w-32 h-32 bg-core-blue-light/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <div 
-              key={member.id}
-              className="scroll-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <TeamMemberCard
-                name={member.name}
-                role={member.role}
-                bio={member.bio}
-                image={member.image}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Section Divider */}
-        <div className="core-section-divider" />
-
-        {/* Call to Action */}
-        <div className="text-center scroll-fade-in">
-          <div className="bg-core-gradient-navy rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
-              Ready to Meet Our Team?
-            </h3>
-            <p className="core-text-lead text-blue-100 mb-8 max-w-2xl mx-auto">
-              Schedule your consultation today and experience the difference personalized physiotherapy care can make.
+      <div className="core-section relative z-10">
+        <div className="core-container">
+          <div className="text-center mb-20 scroll-fade-in">
+            <h2 className="text-5xl md:text-6xl font-black text-core-navy mb-6 animate-shimmer">
+              Meet Our Expert Team
+            </h2>
+            <p className="text-xl md:text-2xl text-core-blue max-w-4xl mx-auto leading-relaxed">
+              Our dedicated team of registered physiotherapists and healthcare professionals is committed to providing personalized, evidence-based care that delivers exceptional results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
-                className="bg-white text-core-blue hover:bg-blue-50 font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105"
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={member.id}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 scroll-fade-in border border-slate-200 hover:border-core-blue/30 hover:scale-105"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                Book an Appointment
-              </button>
-              <button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-white text-white hover:bg-white hover:text-core-blue font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105"
-              >
-                Contact Us
-              </button>
+                <TeamMemberCard
+                  name={member.name}
+                  role={member.role}
+                  bio={member.bio}
+                  image={member.image}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center scroll-fade-in mt-20">
+            <div className="bg-gradient-to-r from-core-navy via-core-blue-dark to-core-blue rounded-3xl p-12 text-white relative overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="text-4xl font-bold mb-6">
+                  Ready to Meet Our Team?
+                </h3>
+                <p className="text-xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Schedule your consultation today and experience the difference personalized physiotherapy care can make in your recovery journey.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <button
+                    onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
+                    className="group bg-white text-core-navy font-bold text-lg px-12 py-5 rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+                  >
+                    Book Assessment
+                    <div className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</div>
+                  </button>
+                  <button
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="border-2 border-white text-white hover:bg-white hover:text-core-navy font-bold text-lg px-12 py-5 rounded-2xl transition-all duration-300 hover:scale-105"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

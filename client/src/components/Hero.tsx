@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Play, Pause } from "lucide-react";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -22,104 +24,138 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
-    <section className="core-video-hero">
-      {/* Video Background for Desktop */}
+    <section className="relative min-h-screen overflow-hidden animate-gradient">
+      {/* Enhanced Video Background */}
       <video
         ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        className="hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
         poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
       >
-        {/* Placeholder video URL - would be replaced with actual physiotherapy video */}
-        <source src="https://sample-videos.com/zip/10/mp4/1080/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+        <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1c9a1a1a1&profile_id=164" type="video/mp4" />
       </video>
 
-      {/* Mobile Background Image */}
-      <div 
-        className="md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`
-        }}
-      />
+      {/* Dynamic Overlay with Particles */}
+      <div className="absolute inset-0 bg-gradient-to-br from-core-navy/90 via-core-blue-dark/85 to-core-blue/80">
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white/20 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
-      {/* Overlay */}
-      <div className="core-video-overlay" />
+      {/* Video Control */}
+      <button
+        onClick={toggleVideo}
+        className="absolute top-24 right-8 z-20 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+      >
+        {isPlaying ? <Pause className="h-5 w-5 text-white" /> : <Play className="h-5 w-5 text-white" />}
+      </button>
 
-      {/* Content */}
-      <div className="core-video-content">
+      {/* Enhanced Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="core-container text-center text-white">
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-12">
             
-            {/* Main Heading */}
-            <div className="scroll-fade-in">
-              <h1 className="core-heading-hero text-white mb-6">
-                Expert Physiotherapy
-                <span className="block text-blue-200">That Moves You Forward</span>
+            {/* Main Heading with Staggered Animation */}
+            <div className="space-y-6">
+              <h1 className="text-6xl md:text-8xl font-black leading-tight animate-fade-in-up">
+                <span className="block text-white animate-shimmer">Expert</span>
+                <span className="block text-slate-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Physiotherapy</span>
+                <span className="block text-slate-400 text-4xl md:text-5xl font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>That Moves You Forward</span>
               </h1>
-              <p className="core-text-lead text-blue-100 max-w-3xl mx-auto mb-8">
-                Leading physiotherapy clinic in Vancouver providing evidence-based treatment, personalized care plans, and innovative rehabilitation solutions to help you achieve optimal movement and live pain-free.
+              <p className="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+                Vancouver's premier physiotherapy clinic providing evidence-based treatment, personalized care plans, and innovative rehabilitation solutions.
               </p>
             </div>
 
-            {/* Action Buttons */}
-            <div className="scroll-fade-in flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Enhanced Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
               <button
                 onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
-                className="core-btn-primary text-lg px-12 py-5 hover:scale-105 transition-transform duration-300 shadow-2xl"
+                className="group relative overflow-hidden bg-white text-core-navy font-bold text-lg px-12 py-5 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
               >
-                Book Your Assessment
+                <span className="relative z-10">Book Your Assessment</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
               <button
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="core-btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-blue-900 text-lg px-12 py-5"
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group border-3 border-white text-white hover:bg-white hover:text-core-navy font-bold text-lg px-12 py-5 rounded-2xl transition-all duration-300 hover:scale-105"
               >
-                Explore Services
+                Learn More
               </button>
             </div>
 
-            {/* Key Stats */}
-            <div className="scroll-fade-in grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
-              <div className="text-center group">
-                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300">15+</div>
-                <div className="text-blue-200 font-medium text-lg">Years of Excellence</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.2s' }}>2000+</div>
-                <div className="text-blue-200 font-medium text-lg">Lives Transformed</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-5xl font-bold text-white mb-3 animate-fade-in-up group-hover:scale-110 transition-transform duration-300" style={{ animationDelay: '0.4s' }}>98%</div>
-                <div className="text-blue-200 font-medium text-lg">Patient Satisfaction</div>
-              </div>
+            {/* Animated Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 pt-20 max-w-5xl mx-auto">
+              {[
+                { number: "15+", label: "Years Excellence", delay: "1.5s" },
+                { number: "2000+", label: "Lives Transformed", delay: "1.7s" },
+                { number: "98%", label: "Success Rate", delay: "1.9s" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: stat.delay }}>
+                  <div className="text-6xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                    {stat.number}
+                  </div>
+                  <div className="text-slate-300 font-semibold text-xl tracking-wide">{stat.label}</div>
+                </div>
+              ))}
             </div>
 
-            {/* Trust Indicators */}
-            <div className="scroll-fade-in pt-12">
-              <div className="flex flex-wrap justify-center items-center gap-6 opacity-90">
-                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
-                  <span className="text-white font-medium text-lg">Registered Physiotherapists</span>
-                </div>
-                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
-                  <span className="text-white font-medium text-lg">Direct Billing Available</span>
-                </div>
-                <div className="bg-white bg-opacity-15 backdrop-blur-md rounded-xl px-8 py-4 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 core-hover-lift">
-                  <span className="text-white font-medium text-lg">Evidence-Based Care</span>
-                </div>
+            {/* Enhanced Trust Indicators */}
+            <div className="pt-16 animate-fade-in-up" style={{ animationDelay: '2.1s' }}>
+              <div className="flex flex-wrap justify-center items-center gap-6">
+                {[
+                  "Registered Physiotherapists",
+                  "Direct Insurance Billing",
+                  "Evidence-Based Care"
+                ].map((text, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-xl rounded-2xl px-8 py-4 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 animate-float"
+                    style={{ animationDelay: `${index * 0.5}s` }}
+                  >
+                    <span className="text-white font-semibold text-lg">{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" 
-           onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
-        <div className="w-6 h-10 border-2 border-white border-opacity-60 rounded-full flex justify-center hover:border-opacity-100 transition-all duration-300">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      {/* Enhanced Scroll Indicator */}
+      <div 
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce z-20"
+        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <div className="w-8 h-12 border-2 border-white/60 rounded-full flex justify-center hover:border-white transition-all duration-300 hover:scale-110">
+          <div className="w-1 h-4 bg-white rounded-full mt-3 animate-pulse"></div>
         </div>
       </div>
     </section>

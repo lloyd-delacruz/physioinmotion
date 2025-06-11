@@ -72,12 +72,12 @@
 
 /* CoreNewport-inspired Color System */
 :root {
-  /* Deep Blue Primary Palette */
-  --core-navy: #0a1829;      /* Deep navy - darkest */
-  --core-blue-dark: #1e3b5a; /* Dark blue */
-  --core-blue: #2563eb;      /* Primary blue */
-  --core-blue-light: #3b82f6; /* Light blue */
-  --core-blue-pale: #dbeafe; /* Pale blue */
+  /* Deep Blue Primary Palette - Updated to match nav/footer */
+  --core-navy: #0f172a;      /* Deep navy - darkest (slate-900) */
+  --core-blue-dark: #1e293b; /* Dark blue (slate-800) */
+  --core-blue: #334155;      /* Primary blue (slate-700) */
+  --core-blue-light: #475569; /* Light blue (slate-600) */
+  --core-blue-pale: #e2e8f0; /* Pale blue (slate-200) */
   
   /* Neutral System */
   --core-white: #ffffff;
@@ -134,7 +134,7 @@ html {
   }
 }
 
-/* Animations & Transitions */
+/* Advanced Animations & Transitions */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -166,6 +166,67 @@ html {
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -176,6 +237,34 @@ html {
 
 .animate-slide-in-left {
   animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, var(--core-navy), var(--core-blue-dark), var(--core-blue), var(--core-blue-light));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 /* Scroll-triggered animations */
