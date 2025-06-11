@@ -61,7 +61,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button onClick={handleBookAppointment} className="bg-primary hover:bg-blue-700">
+            <Button onClick={handleBookAppointment} className="bg-blue-600 hover:bg-blue-700">
               Book Appointment
             </Button>
           </div>
@@ -84,8 +84,8 @@ export default function Header() {
                         <a
                           className={`block px-3 py-2 rounded-md text-base font-medium ${
                             isActive
-                              ? "text-primary bg-primary bg-opacity-10"
-                              : "text-neutral-mid hover:text-primary hover:bg-gray-50"
+                              ? "text-blue-600 bg-blue-100"
+                              : "text-neutral-mid hover:text-blue-600 hover:bg-blue-50"
                           }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -97,7 +97,7 @@ export default function Header() {
                   <div className="pt-4">
                     <Button 
                       onClick={handleBookAppointment} 
-                      className="w-full bg-primary hover:bg-blue-700"
+                      className="w-full bg-blue-600 hover:bg-blue-700"
                     >
                       Book Appointment
                     </Button>
