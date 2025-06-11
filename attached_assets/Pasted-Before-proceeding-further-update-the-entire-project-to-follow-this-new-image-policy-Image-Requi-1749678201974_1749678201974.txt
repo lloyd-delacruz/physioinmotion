@@ -1,0 +1,64 @@
+Before proceeding further, update the entire project to follow this new image policy:
+
+✅ Image Requirements:
+
+Use dummy photos for now — AI-generated or high-quality royalty-free placeholders.
+
+All photos must convey modern, active, vibrant physiotherapy and movement themes.
+
+NO stocky "old clinic", dark, or dry-looking photos.
+
+Style should match a modern Vancouver, Canada clinic serving a diverse, active population.
+
+✅ Sources:
+
+You may use AI-generated images as placeholders.
+
+Alternatively, use royalty-free images from trusted free sources (Unsplash, Pexels) with attribution if needed.
+
+✅ Photo Tone & Style:
+
+Diverse, inclusive (reflect Vancouver’s multicultural demographics).
+
+Mix of indoor clinical images (hands-on therapy, rehab exercises) and active lifestyle images (athletes, walking, stretching).
+
+Avoid heavily staged stock imagery or purely "fitness influencer" photos.
+
+Target the feeling of professional care, personalized treatment, movement-focused recovery.
+
+✅ Hero Section:
+
+Replace current image with a dynamic, movement-focused AI-generated image or placeholder.
+
+Example: adult athlete mid-stretch, physiotherapist assisting patient, outdoor active lifestyle in Vancouver-like setting.
+
+✅ Services Page (Phase 3):
+
+Each ServiceCard image must follow this new photo guideline.
+
+Dummy images acceptable — use AI-generated or placeholder with correct alt text.
+
+No default generic stock photos.
+
+✅ Our Team Page (Phase 4 upcoming):
+
+Use AI-generated placeholders for team member photos.
+
+Style: friendly, approachable, diverse representation, professional clinic attire.
+
+✅ Implementation:
+
+Replace all images currently in the project to align with this policy.
+
+Ensure proper alt text placeholders are present for each image.
+
+All images must fit cleanly within the site’s design — consistent spacing, responsive behavior.
+
+✅ DO NOT:
+
+Do not use random stock photos that do not match the tone.
+
+Do not use old clinical photos with outdated equipment.
+
+Do not use generic images of "doctor shaking hands" or "clipboard writing".
+

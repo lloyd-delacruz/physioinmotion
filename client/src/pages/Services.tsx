@@ -20,35 +20,35 @@ const services: Service[] = [
     id: "sports-injury",
     title: "Sports Injury Rehabilitation",
     description: "Comprehensive rehabilitation programs for athletes and active individuals, focusing on injury recovery, performance optimization, and safe return to sport activities.",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     slug: "sports-injury"
   },
   {
     id: "post-surgical",
     title: "Post-Surgical Physiotherapy",
     description: "Specialized post-operative care and rehabilitation to optimize healing, restore function, and ensure successful recovery following orthopedic and other surgical procedures.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     slug: "post-surgical"
   },
   {
     id: "chronic-pain",
     title: "Chronic Pain Management",
     description: "Evidence-based treatment approaches for persistent pain conditions, incorporating manual therapy, exercise prescription, and patient education for long-term relief.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     slug: "chronic-pain"
   },
   {
     id: "pediatric",
     title: "Pediatric Physiotherapy",
     description: "Specialized care for children and adolescents addressing developmental delays, movement disorders, and pediatric conditions in a fun, supportive environment.",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "https://images.unsplash.com/photo-1609902726285-00668009f004?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     slug: "pediatric"
   },
   {
     id: "workplace-injury",
     title: "Workplace Injury Rehabilitation",
     description: "Comprehensive treatment for work-related injuries including ergonomic assessments, injury prevention programs, and safe return-to-work protocols.",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     slug: "workplace-injury"
   }
 ];

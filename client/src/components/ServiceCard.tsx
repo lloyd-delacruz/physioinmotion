@@ -24,7 +24,7 @@ export default function ServiceCard({ title, description, image, slug }: Service
       <div className="overflow-hidden">
         <img
           src={image}
-          alt={`${title} - Professional physiotherapy service`}
+          alt={`Modern physiotherapy ${title.toLowerCase()} - diverse patients receiving active treatment in professional Vancouver clinic setting`}
           className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>

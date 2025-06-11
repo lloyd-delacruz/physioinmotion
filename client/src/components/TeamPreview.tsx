@@ -5,19 +5,19 @@ const teamMembers = [
     name: "Dr. Sarah Johnson",
     title: "Lead Physiotherapist, MSc PT",
     specialization: "Specializes in orthopedic rehabilitation and sports injury recovery with 10+ years of experience.",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
   },
   {
     name: "Dr. Michael Chen",
     title: "Sports Physiotherapist, DPT",
     specialization: "Expert in performance optimization and injury prevention for athletes of all levels.",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
   },
   {
     name: "Dr. Emily Rodriguez",
     title: "Manual Therapy Specialist, PhD PT",
     specialization: "Focuses on chronic pain management and manual therapy techniques with advanced certification.",
-    image: "https://images.unsplash.com/photo-1594824475460-1bb12dfc1a45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1594824475460-1bb12dfc1a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function TeamPreview() {
               <div className="relative mb-6">
                 <img
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} - Professional physiotherapist at modern Vancouver clinic, friendly and approachable healthcare provider`}
                   className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
                 />
               </div>
