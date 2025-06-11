@@ -36,6 +36,20 @@ const teamMembers: TeamMember[] = [
     role: "Client Services Coordinator",
     bio: "Amanda ensures every patient receives exceptional care from their first contact with our clinic. She coordinates appointments, insurance matters, and treatment plans while providing warm, professional support throughout each patient's recovery journey.",
     image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+  },
+  {
+    id: "james-thompson",
+    name: "James Thompson",
+    role: "Kinesiologist",
+    bio: "James specializes in movement analysis and exercise prescription to optimize human performance. With his expertise in biomechanics and exercise science, he develops customized fitness programs that support rehabilitation goals and prevent future injuries.",
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+  },
+  {
+    id: "maria-santos",
+    name: "Maria Santos",
+    role: "Rehabilitation Assistant",
+    bio: "Maria provides hands-on support during treatment sessions and helps patients with therapeutic exercises. Her compassionate approach and attention to detail ensure patients feel comfortable and confident throughout their rehabilitation journey.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
   }
 ];
 
