@@ -22,27 +22,27 @@ export default function Home() {
       <TeamPreview />
 
       {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-secondary to-green-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">
                 Ready to Start Your Recovery?
               </h2>
-              <p className="text-lg text-green-100 leading-relaxed">
+              <p className="text-lg text-blue-100 leading-relaxed">
                 Take the first step towards better movement and pain-free living. Our team is here to support you on your journey to optimal health.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="text-accent h-5 w-5 flex-shrink-0" />
+                  <Phone className="text-white h-5 w-5 flex-shrink-0" />
                   <span className="text-lg">(416) 555-0123</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="text-accent h-5 w-5 flex-shrink-0" />
+                  <Mail className="text-white h-5 w-5 flex-shrink-0" />
                   <span className="text-lg">info@physioinmotion.ca</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="text-accent h-5 w-5 flex-shrink-0" />
+                  <MapPin className="text-white h-5 w-5 flex-shrink-0" />
                   <span className="text-lg">123 Health Street, Toronto, ON M5V 3A8</span>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function Home() {
               </div>
               <Button
                 onClick={handleBookAppointment}
-                className="w-full bg-accent hover:bg-yellow-600 text-white px-8 py-4 text-lg font-semibold"
+                className="w-full bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold"
               >
                 Book Your Appointment Today
               </Button>

@@ -43,11 +43,13 @@ export default function TeamPreview() {
           {teamMembers.map((member, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-6">
-                <img
-                  src={member.image}
-                  alt={`${member.name} - Professional physiotherapist at modern Vancouver clinic, friendly and approachable healthcare provider`}
-                  className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
-                />
+                <div className="w-32 h-32 rounded-full mx-auto bg-blue-100 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-2xl">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-neutral-dark mb-2">
                 {member.name}
