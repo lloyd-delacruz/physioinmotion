@@ -12,11 +12,13 @@ export default function TeamMemberCard({ name, role, bio, image }: TeamMemberCar
     <Card className="group overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border border-gray-200">
       <CardHeader className="text-center pb-4">
         <div className="relative mb-6">
-          <img
-            src={image}
-            alt={`${name} - ${role} at Physio in Motion Vancouver clinic, friendly and approachable healthcare professional`}
-            className="w-40 h-40 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow"
-          />
+          <div className="w-40 h-40 rounded-full mx-auto bg-blue-100 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+            <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-3xl">
+                {name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+          </div>
         </div>
         <h3 className="text-xl font-semibold text-neutral-dark mb-2">
           {name}
