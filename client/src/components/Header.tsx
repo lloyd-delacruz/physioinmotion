@@ -1,5 +1,6 @@
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -100,11 +101,11 @@ export default function Header() {
     }
   };
 
-  const getButtonClasses = () => {
+  const getButtonVariant = () => {
     if (isHomePage && !isScrolled) {
-      return 'bg-white text-core-blue hover:bg-blue-50';
+      return 'secondary';
     } else {
-      return 'core-btn-primary';
+      return 'default';
     }
   };
 
@@ -144,17 +145,24 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             <div className={`flex items-center text-sm font-medium ${getPhoneClasses()}`}>
               <Phone className="h-4 w-4 mr-2" />
               <span>(604) 555-0123</span>
             </div>
-            <button 
-              className={`text-sm px-6 py-3 font-semibold rounded-lg transition-all duration-300 hover:scale-105 ${getButtonClasses()}`}
+            <Button 
+              variant={getButtonVariant()}
+              size="sm"
+              className={`font-semibold transition-all duration-300 hover:scale-105 ${
+                isHomePage && !isScrolled 
+                  ? 'bg-white text-core-navy hover:bg-slate-100 shadow-lg' 
+                  : 'bg-core-navy hover:bg-core-blue-dark shadow-md'
+              }`}
               onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
             >
+              <Calendar className="w-4 h-4 mr-2" />
               Book Assessment
-            </button>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
