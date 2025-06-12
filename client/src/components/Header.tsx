@@ -155,8 +155,8 @@ export default function Header() {
               size="sm"
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
                 isHomePage && !isScrolled 
-                  ? 'bg-white text-core-navy hover:bg-slate-100 shadow-lg' 
-                  : 'bg-core-navy hover:bg-core-blue-dark shadow-md'
+                  ? 'bg-white !text-core-navy hover:bg-slate-100 hover:!text-core-navy shadow-lg' 
+                  : 'bg-core-navy !text-white hover:bg-core-blue-dark hover:!text-white shadow-md'
               }`}
               onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
             >
