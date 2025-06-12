@@ -61,7 +61,7 @@ export default function Contact() {
       <div className="core-section relative z-10">
         <div className="core-container">
           <div className="text-center mb-20 scroll-fade-in">
-            <h2 className="text-5xl md:text-6xl font-black mb-6 animate-shimmer">
+            <h2 className="text-5xl md:text-6xl font-black mb-6">
               Get In Touch
             </h2>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">

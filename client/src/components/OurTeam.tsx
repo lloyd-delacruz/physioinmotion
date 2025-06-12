@@ -69,7 +69,7 @@ export default function OurTeam() {
       <div className="core-section relative z-10">
         <div className="core-container">
           <div className="text-center mb-20 scroll-fade-in">
-            <h2 className="text-5xl md:text-6xl font-black text-core-navy mb-6 animate-shimmer">
+            <h2 className="text-5xl md:text-6xl font-black text-core-navy mb-6">
               Meet Our Expert Team
             </h2>
             <p className="text-xl md:text-2xl text-core-blue max-w-4xl mx-auto leading-relaxed">

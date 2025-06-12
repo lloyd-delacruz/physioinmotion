@@ -51,7 +51,7 @@ export default function About() {
         <div className="core-container">
           {/* Header Section */}
           <div className="text-center mb-20 scroll-fade-in">
-            <h2 className="text-5xl md:text-6xl font-black text-core-navy mb-6 animate-shimmer">
+            <h2 className="text-5xl md:text-6xl font-black text-core-navy mb-6">
               About Physio in Motion
             </h2>
             <p className="text-xl md:text-2xl text-core-blue max-w-4xl mx-auto leading-relaxed">

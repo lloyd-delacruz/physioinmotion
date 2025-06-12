@@ -67,10 +67,10 @@ export default function Hero() {
             
             {/* Main Heading with Staggered Animation */}
             <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl font-black leading-tight animate-fade-in-up">
-                <span className="block text-white drop-shadow-2xl animate-shimmer">Expert</span>
-                <span className="block text-white drop-shadow-xl animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Physiotherapy</span>
-                <span className="block text-slate-100 drop-shadow-lg text-4xl md:text-5xl font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>That Moves You Forward</span>
+              <h1 className="text-6xl md:text-8xl font-black leading-tight">
+                <span className="block text-white drop-shadow-2xl">Expert</span>
+                <span className="block text-white drop-shadow-xl">Physiotherapy</span>
+                <span className="block text-slate-100 drop-shadow-lg text-4xl md:text-5xl font-medium">That Moves You Forward</span>
               </h1>
               <p className="text-xl md:text-2xl text-white drop-shadow-lg max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
                 Vancouver's premier physiotherapy clinic providing evidence-based treatment, personalized care plans, and innovative rehabilitation solutions.
