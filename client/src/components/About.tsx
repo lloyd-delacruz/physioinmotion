@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Award, Users, Target, Heart, CheckCircle, ArrowRight } from "lucide-react";
-import orthoImage from "@assets/ortho.jpg";
+import storyImage from "@assets/story.jpg";
 
 export default function About() {
   // Removed scroll animations for better navigation UX
@@ -66,7 +66,7 @@ export default function About() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-core-navy to-core-blue rounded-2xl blur opacity-20 animate-pulse"></div>
                 <img
-                  src={orthoImage}
+                  src={storyImage}
                   width="800"
                   height="600"
                   alt="Modern physiotherapy clinic interior"
