@@ -13,11 +13,7 @@ yarn-error.log*
 server.log
 .claude
 attached_assets
-client/src
-server/index.ts
-server/vite.ts
-vite.config.ts
-tsconfig.json
+server/
 README.md
 PRD.md
 DEPLOYMENT.md 
