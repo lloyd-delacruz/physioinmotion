@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { ArrowRight, Star, Clock, Shield, Users } from "lucide-react";
 import orthoImage from "@assets/ortho.jpg";
+import manualTherapyImage from "@assets/manual_therapy.jpg";
+import neuroImage from "@assets/neuro.jpg";
+import pelvicTherapyImage from "@assets/pelvic_therapy.webp";
 
 interface Service {
   id: string;
@@ -54,7 +57,7 @@ const services: Service[] = [
       "Spinal manipulation"
     ],
     duration: "45 minutes",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: manualTherapyImage
   },
   {
     id: "neurological",
@@ -68,7 +71,7 @@ const services: Service[] = [
       "Adaptive equipment training"
     ],
     duration: "60 minutes",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: neuroImage
   },
   {
     id: "pelvic-health",
@@ -82,7 +85,7 @@ const services: Service[] = [
       "Core strengthening"
     ],
     duration: "60 minutes",
-    image: "https://images.unsplash.com/photo-1559757175-cea4ceaefb5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: pelvicTherapyImage
   },
   {
     id: "workplace-injury",
