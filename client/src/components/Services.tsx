@@ -24,7 +24,7 @@ const services: Service[] = [
       "Movement analysis"
     ],
     duration: "45-60 minutes",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    image: "/attached_assets/ortho.jpg",
     popular: true
   },
   {
