@@ -5,7 +5,6 @@ import path from "path";
 export default defineConfig({
   plugins: [
     react(),
-    // Removed Replit-specific plugins for local development
   ],
   resolve: {
     alias: {
@@ -14,10 +13,12 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
+    outDir: "dist",
     emptyOutDir: true,
+    rollupOptions: {
+      input: "./client/index.html",
+    },
   },
   server: {
     fs: {
