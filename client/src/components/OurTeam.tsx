@@ -106,7 +106,7 @@ export default function OurTeam() {
                 <h3 className="text-4xl font-bold mb-6">
                   Ready to Meet Our Team?
                 </h3>
-                <p className="text-xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
                   Schedule your consultation today and experience the difference personalized physiotherapy care can make in your recovery journey.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
