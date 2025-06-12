@@ -56,10 +56,17 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Use port 5000 for production (Replit), 3000 for local development
-  const port = process.env.NODE_ENV === "production" ? 5000 : 3000;
-  server.listen(port, () => {
-    log(`serving on port ${port}`);
-    log(`Local development: http://localhost:${port}`);
-  });
+  // Use Vercel's PORT environment variable if available, otherwise fallback to defaults
+  const port = process.env.PORT || (process.env.NODE_ENV === "production" ? 5000 : 3000);
+  
+  // Only start server if not in Vercel environment (Vercel handles this)
+  if (!process.env.VERCEL) {
+    server.listen(port, () => {
+      log(`serving on port ${port}`);
+      log(`Local development: http://localhost:${port}`);
+    });
+  }
 })();
+
+// Export the app for Vercel
+export default app;
