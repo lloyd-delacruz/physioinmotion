@@ -65,7 +65,9 @@ export default function About() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-core-navy to-core-blue rounded-2xl blur opacity-20 animate-pulse"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                  src="attached_assets/story.jpg"
+                  width="800"
+                  height="600"
                   alt="Modern physiotherapy clinic interior"
                   className="relative w-full h-96 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
