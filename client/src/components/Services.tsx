@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ArrowRight, Star, Clock, Shield, Users } from "lucide-react";
+import orthoImage from "@assets/ortho.jpg";
 
 interface Service {
   id: string;
@@ -24,7 +25,7 @@ const services: Service[] = [
       "Movement analysis"
     ],
     duration: "45-60 minutes",
-    image: "/attached_assets/ortho.jpg",
+    image: orthoImage,
     popular: true
   },
   {
