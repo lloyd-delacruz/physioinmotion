@@ -2,23 +2,7 @@ import { useEffect } from "react";
 import { Award, Users, Target, Heart, CheckCircle, ArrowRight } from "lucide-react";
 
 export default function About() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const animatedElements = document.querySelectorAll('.scroll-fade-in');
-    animatedElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  // Removed scroll animations for better navigation UX
 
   const values = [
     {

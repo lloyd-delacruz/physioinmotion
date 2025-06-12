@@ -5,24 +5,7 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  useEffect(() => {
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const animatedElements = document.querySelectorAll('.scroll-fade-in');
-    animatedElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  // Removed scroll animations for better navigation UX
 
   const toggleVideo = () => {
     if (videoRef.current) {
