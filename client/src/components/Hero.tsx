@@ -85,11 +85,11 @@ export default function Hero() {
             {/* Main Heading with Staggered Animation */}
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl font-black leading-tight animate-fade-in-up">
-                <span className="block text-white animate-shimmer">Expert</span>
-                <span className="block text-slate-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Physiotherapy</span>
-                <span className="block text-slate-400 text-4xl md:text-5xl font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>That Moves You Forward</span>
+                <span className="block text-white drop-shadow-2xl animate-shimmer">Expert</span>
+                <span className="block text-white drop-shadow-xl animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Physiotherapy</span>
+                <span className="block text-slate-100 drop-shadow-lg text-4xl md:text-5xl font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>That Moves You Forward</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+              <p className="text-xl md:text-2xl text-white drop-shadow-lg max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
                 Vancouver's premier physiotherapy clinic providing evidence-based treatment, personalized care plans, and innovative rehabilitation solutions.
               </p>
             </div>
@@ -119,10 +119,10 @@ export default function Hero() {
                 { number: "98%", label: "Success Rate", delay: "1.9s" }
               ].map((stat, index) => (
                 <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: stat.delay }}>
-                  <div className="text-6xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                  <div className="text-6xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
                     {stat.number}
                   </div>
-                  <div className="text-slate-300 font-semibold text-xl tracking-wide">{stat.label}</div>
+                  <div className="text-white font-semibold text-xl tracking-wide drop-shadow-lg">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -137,10 +137,10 @@ export default function Hero() {
                 ].map((text, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-xl rounded-2xl px-8 py-4 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 animate-float"
+                    className="bg-white/15 backdrop-blur-xl rounded-2xl px-8 py-4 border-2 border-white/30 hover:bg-white/25 transition-all duration-500 hover:scale-105 animate-float shadow-2xl"
                     style={{ animationDelay: `${index * 0.5}s` }}
                   >
-                    <span className="text-white font-semibold text-lg">{text}</span>
+                    <span className="text-white font-bold text-lg drop-shadow-lg">{text}</span>
                   </div>
                 ))}
               </div>

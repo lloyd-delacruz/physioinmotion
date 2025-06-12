@@ -141,16 +141,16 @@ export default function About() {
 
           {/* Achievements Section */}
           <div className="mb-24">
-            <div className="bg-gradient-to-r from-core-navy via-core-blue-dark to-core-blue rounded-3xl p-12 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 rounded-3xl p-12 text-white relative overflow-hidden border-2 border-slate-600">
               {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent"></div>
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent"></div>
               </div>
               
               <div className="relative z-10">
                 <div className="text-center mb-12 scroll-fade-in">
-                  <h3 className="text-4xl font-bold mb-4">Our Achievements</h3>
-                  <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                  <h3 className="text-4xl font-bold mb-4 text-white">Our Achievements</h3>
+                  <p className="text-xl text-slate-200 max-w-2xl mx-auto">
                     Numbers that reflect our commitment to excellence and patient satisfaction.
                   </p>
                 </div>
@@ -161,10 +161,10 @@ export default function About() {
                       className="text-center group scroll-fade-in animate-scale-in"
                       style={{ animationDelay: `${index * 0.2}s` }}
                     >
-                      <div className="text-5xl md:text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                      <div className="text-5xl md:text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-300 text-white drop-shadow-lg">
                         {achievement.number}
                       </div>
-                      <div className="text-slate-300 font-semibold text-lg">{achievement.label}</div>
+                      <div className="text-slate-200 font-semibold text-lg">{achievement.label}</div>
                     </div>
                   ))}
                 </div>
