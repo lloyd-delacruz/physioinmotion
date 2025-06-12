@@ -68,7 +68,6 @@ export default function Hero() {
             {/* Main Heading with Staggered Animation */}
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl font-black leading-tight">
-                <span className="block text-white drop-shadow-2xl"></span>
                 <span className="block text-white drop-shadow-xl">Physiotherapy</span>
                 <span className="block text-slate-100 drop-shadow-lg text-4xl md:text-5xl font-medium">That Moves You Forward</span>
               </h1>
