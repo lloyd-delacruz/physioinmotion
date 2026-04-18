@@ -67,7 +67,7 @@ export default function Header() {
 
   const getLogoClasses = () => {
     if (isHomePage && !isScrolled) {
-      return 'text-white hover:text-blue-200';
+      return 'text-white hover:text-blue-200 drop-shadow-md';
     } else {
       return 'text-core-navy hover:text-core-blue';
     }
@@ -79,9 +79,9 @@ export default function Header() {
     if (isHomePage && !isScrolled) {
       // Home page transparent navbar
       if (isActiveLink) {
-        return `${baseClasses} active text-white`;
+        return `${baseClasses} active text-white drop-shadow-md`;
       } else {
-        return `${baseClasses} text-blue-100 hover:text-white hover:bg-white/10`;
+        return `${baseClasses} text-blue-100 hover:text-white hover:bg-white/10 drop-shadow-sm`;
       }
     } else {
       // Solid navbar
@@ -153,10 +153,10 @@ export default function Header() {
             <Button 
               variant={getButtonVariant()}
               size="sm"
-              className={`font-semibold transition-all duration-300 hover:scale-105 ${
+              className={`font-semibold transition-all duration-300 hover:scale-110 active:scale-95 ${
                 isHomePage && !isScrolled 
-                  ? 'bg-white !text-core-navy hover:bg-slate-100 hover:!text-core-navy shadow-lg' 
-                  : 'bg-core-navy !text-white hover:bg-core-blue-dark hover:!text-white shadow-md'
+                  ? 'bg-white !text-core-navy hover:bg-slate-100 hover:!text-core-navy shadow-xl' 
+                  : 'bg-core-navy !text-white hover:bg-core-blue-dark hover:!text-white shadow-lg'
               }`}
               onClick={() => window.open("https://physioinmotion.janeapp.com", "_blank")}
             >

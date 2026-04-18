@@ -61,7 +61,7 @@ export default function Hero() {
       </button>
 
       {/* Enhanced Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
+      <div className="relative z-10 flex items-center justify-center min-h-screen pt-20">
         <div className="core-container text-center text-white">
           <div className="max-w-6xl mx-auto space-y-12">
             

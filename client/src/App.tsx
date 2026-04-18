@@ -5,8 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import ServicesPreview from "@/components/ServicesPreview";
-import TeamPreview from "@/components/TeamPreview";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import OurTeam from "@/components/OurTeam";
